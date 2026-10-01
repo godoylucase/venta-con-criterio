@@ -1,0 +1,29 @@
+{
+  "skill_name": "venta-con-criterio",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Tengo una charla con el dueño de una pyme que dice que necesita un chatbot para responder consultas. Ayudame a preparar las preguntas y a decidir qué debería proponerle.",
+      "expected_output": "Reconstruye proceso, volumen, demora, seguimiento y consecuencia antes de elegir una automatización; trata el chatbot como hipótesis y propone un siguiente paso.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Armé un sistema que responde consultas, califica interesados y agenda reuniones para inmobiliarias. Convertí esas funciones en una oferta comercial completa.",
+      "expected_output": "Expresa primero el problema y el resultado; usa las cuatro variables de valor y deja visibles componentes, plazo, esfuerzo del cliente, evidencia, inversión, garantía y campos pendientes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "La automatización cuesta unos 120 dólares por mes en herramientas. ¿Cuánto tendría que cobrar de instalación y mensualidad? Todavía no sé cuántas ventas o horas recupera.",
+      "expected_output": "No copia precios del material; separa costo, instalación y mensualidad, pide datos de impacto y alcance, y propone escenarios o una prueba de precio marcada como hipótesis.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Todavía no tengo clientes ni casos. Diseñame un plan para conseguir los primeros interesados y después escalar.",
+      "expected_output": "Propone red y conversaciones, elección de problema, demo MVP, documentación y contenido antes de anuncios; no inventa autoridad ni recomienda contacto invasivo.",
+      "files": []
+    }
+  ]
+}
