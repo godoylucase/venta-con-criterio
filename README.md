@@ -29,20 +29,69 @@ venta-con-criterio/
 
 `SKILL.md` contiene el flujo principal. Las referencias amplían únicamente el modo de trabajo que corresponda a cada pedido.
 
-## Instalación compartida para Codex y Claude
+## Instalación
 
-Podés mantener una sola copia y enlazarla desde ambos clientes:
+### Opción recomendada: una copia para Codex y Claude Code
+
+Esta opción mantiene una sola copia del repositorio y la enlaza desde los directorios personales de ambos clientes.
+
+1. Creá los directorios necesarios:
+
+   ```bash
+   mkdir -p ~/.agents/skills ~/.codex/skills ~/.claude/skills
+   ```
+
+2. Cloná la skill:
+
+   ```bash
+   git clone https://github.com/godoylucase/venta-con-criterio.git ~/.agents/skills/venta-con-criterio
+   ```
+
+3. Enlazala para Codex y Claude Code:
+
+   ```bash
+   ln -s ~/.agents/skills/venta-con-criterio ~/.codex/skills/venta-con-criterio
+   ln -s ~/.agents/skills/venta-con-criterio ~/.claude/skills/venta-con-criterio
+   ```
+
+4. Verificá que ambos clientes puedan encontrar `SKILL.md`:
+
+   ```bash
+   test -f ~/.codex/skills/venta-con-criterio/SKILL.md
+   test -f ~/.claude/skills/venta-con-criterio/SKILL.md
+   ```
+
+5. Iniciá una sesión nueva en el cliente que vayas a usar.
+
+### Instalar únicamente en Codex
 
 ```bash
-git clone https://github.com/godoylucase/venta-con-criterio.git ~/.agents/skills/venta-con-criterio
-mkdir -p ~/.codex/skills ~/.claude/skills
-ln -s ../../.agents/skills/venta-con-criterio ~/.codex/skills/venta-con-criterio
-ln -s ../../.agents/skills/venta-con-criterio ~/.claude/skills/venta-con-criterio
+mkdir -p ~/.codex/skills
+git clone https://github.com/godoylucase/venta-con-criterio.git ~/.codex/skills/venta-con-criterio
 ```
 
-Reiniciá el cliente o comenzá una sesión nueva después de instalarla.
+Después, iniciá una sesión nueva. Podés invocarla explícitamente como `$venta-con-criterio` o dejar que Codex la seleccione cuando el pedido coincida con su descripción.
 
-La skill puede seleccionarse automáticamente cuando el pedido coincide con su descripción o invocarse explícitamente como `$venta-con-criterio` en clientes que admitan esa sintaxis.
+### Instalar únicamente en Claude Code
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/godoylucase/venta-con-criterio.git ~/.claude/skills/venta-con-criterio
+```
+
+Después, iniciá una sesión nueva. Podés invocarla explícitamente como `/venta-con-criterio` o dejar que Claude la seleccione cuando el pedido coincida con su descripción.
+
+### Actualizar la instalación
+
+Si usaste la opción compartida:
+
+```bash
+git -C ~/.agents/skills/venta-con-criterio pull --ff-only
+```
+
+Si la instalaste directamente en un solo cliente, reemplazá la ruta por `~/.codex/skills/venta-con-criterio` o `~/.claude/skills/venta-con-criterio`.
+
+Las rutas utilizadas siguen la documentación de [skills en Codex](https://developers.openai.com/blog/eval-skills) y [skills en Claude Code](https://code.claude.com/docs/en/skills). Claude Code admite que la carpeta de una skill sea un enlace simbólico.
 
 ## Ejemplos de uso
 
